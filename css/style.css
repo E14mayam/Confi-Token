@@ -167,13 +167,16 @@ body .home-header nav a {
   color: #10316B;
   border-bottom: 2px solid #10316B;
   padding: 10px 10px;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
+  -webkit-box-shadow: inset 0 0 0 0 #10316B;
+          box-shadow: inset 0 0 0 0 #10316B;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
 }
 
 body .home-header nav a:hover {
+  -webkit-box-shadow: inset 300px 0 0 0 #10316B;
+          box-shadow: inset 300px 0 0 0 #10316B;
   color: #ECECEB;
-  background-color: #10316B;
 }
 
 body .content {
