@@ -60,21 +60,24 @@ input[type=number]::-webkit-inner-spin-button,
         }
 }
 
-%rounded-shadow{
+@mixin rounded-shadow($theme: DarkGray) {
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, 
     rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
     rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, 
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, 
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
+  }
+
+
+    
+
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: $font-stack;
-    
 }
 
 
@@ -145,7 +148,7 @@ body{
            &:hover{
                background-color: $primary-color;
                color: #ECECEB;
-               transform: scale(1.1);
+               transform: scale(0.9);
            }
            
 
@@ -165,12 +168,20 @@ body{
             }
         }
     }
+
+    @media(max-width: 1020px){
+        .slide-row{
+            flex-direction: column;
+            align-items: center;
+        }
+    }    
 }
 
 
 body{
     cursor: none;
-
+    overflow-x: hidden;
+    
     .home-header{
         padding: 40px 0px;
 
@@ -189,6 +200,10 @@ body{
             padding: 10px 10px;
             box-shadow: inset 0 0 0 0 $primary-color;
             transition: all 0.4s ease-in-out 0s;
+
+            img{
+                display: none;
+            }
             
             
 
@@ -223,7 +238,7 @@ body{
         margin-top: 90px;
 
         .airdrop-text, wallet{
-            flex-basis: 50%;
+            flex-basis: 60%, 40%;
             p{
                 max-width: 60%;
             }
@@ -236,7 +251,10 @@ body{
                 padding: 5px 20px;
                 border-radius: 15px;
                 font-size: 25px;
-                max-width: 150px;
+
+                &:focus{
+                    box-shadow: none
+                }
             }
 
             button{
@@ -281,15 +299,21 @@ body{
     
     .about{
         margin: 90px auto;
+        width: 80%;
+
+        .about-img{
+        background-image: url('../images/stock-price.svg');
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+        img{
+            display: none;
+        }
+        }
 
         .about-img, .about-text{
             flex-basis: 50%;
-        }
 
-        .about-img{
-            background-image: url('../images/stock-price.svg');
-            background-size: cover;
-            background-position: right;
         }
 
         .about-text{
@@ -302,6 +326,7 @@ body{
 
             p{
                 font-size: 13px;
+                width: 60%;
             }
         }
     }
@@ -325,24 +350,106 @@ body{
             }
         }
     }
-}
+
+    @media(max-width: 768px){
+        .home-header{
+            nav{
+                position: fixed;
+                display: flex;
+                bottom: 20px;
+                width: 40%;
+                height: 50px;
+                background-color: $alternate-color;
+                border-radius: 20px;
+                margin: 0px auto;
+                right: 0px;
+                left: 0px;
+                justify-content: center;
+                @include rounded-shadow();
+
+
+                a{
+                    box-shadow: none;
+                    border: none;
+
+                    &:hover{
+                        box-shadow: none;
+                    }
+                        
+                    span{
+                        display: none;
+                    }
+                    img{
+                       display: block; 
+                       width: 30px;
+                    }   
+                    
+                }
+            }
 
 
 
+        button{
+            display: block;
+            z-index: 2;
 
+            &:focus{
+                box-shadow: none;
+            }
 
+            img{
+                width: 30px;
+            }
+        }
 
+        }
 
+        .airdrop{
+            flex-direction: column;
+            .airdrop-text{
+                margin: 20px 0px;
+                text-align: center;
+                p{
+                    margin: 0px auto;
+                    max-width: 100%;
+                }
+            }
+        }
 
+        .about{
+            flex-direction: column;
+            .about-img{
+                img{
+                    display: block;
+                    max-width: 200px;
+                }
+            }
+        }
 
-
-
-
-
-@media(max-width: 1020px){
-    .slide-row{
-        flex-direction: column;
-        align-items: center;
+    .connect{
+        
+       
+        margin-bottom: 60px;
+        .connect-items{
+            h5, p{
+                font-size: 10px;
+                padding: 0px 0px;
+            }
+        }
+    }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
