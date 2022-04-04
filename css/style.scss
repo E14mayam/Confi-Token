@@ -90,6 +90,8 @@ body{
     background-color: $alternate-color;
     cursor: none;
     
+}
+    
     .index-header {
 
         h1 img{
@@ -175,14 +177,10 @@ body{
             align-items: center;
         }
     }    
-}
 
 
-body{
-    cursor: none;
-    overflow-x: hidden;
     
-    .home-header{
+.home-header{
         padding: 40px 0px;
 
         h1 img{
@@ -212,9 +210,9 @@ body{
                 color: $alternate-color;
             }
         }
-    }
+}
 
-    .content{
+.content{
         background: url('../images/coming-soon.svg');
         background-position: center;
         background-size: cover;
@@ -295,9 +293,9 @@ body{
                 border-top: none;
             }
         }
-    }
+}
     
-    .about{
+.about{
         margin: 90px auto;
         width: 80%;
 
@@ -437,8 +435,8 @@ body{
             }
         }
     }
-    }
 }
+
 
 
 
